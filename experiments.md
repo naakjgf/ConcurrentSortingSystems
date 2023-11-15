@@ -1,8 +1,57 @@
-(This is a template. Delete this line and fill in the sections below)
 # Threaded Merge Sort Experiments
 
 
-## Host 1: [NAME]
+## Host 1: Ubuntu VM
+
+- CPU: QEMU Virtual Processor, Model virt-7.2, 5 Cores, 2000 MHz Max Speed, 1 Thread per Core
+- Cores: 5
+- Cache size (if known):
+- RAM: 8192 MB
+- Storage (if known): 15.11 GB Available 
+- OS: Ubuntu 22.04
+
+### Input data
+
+100 million randomly generated numbers, I used "shuf -i1-100000000 > hundred-million.txt" as was in the example to create a randomly generated file with 100 million numbers unordered, for the default msort it took 20.002258 seconds, which is more than the recommended 10 seconds. 
+
+### Experiments
+
+*Replace X, Y, Z with the number of threads used in each experiment set.*
+
+#### 2 Threads
+
+Command used to run experiment: `MSORT_THREADS=2 ./tmsort 100000000 < hundred-million.txt > /dev/null`
+
+Sorting portion timings:
+
+1. 8.839257 seconds
+2. 8.837980 seconds
+3. 8.836806 seconds
+4. 8.862133 seconds
+
+#### 5 Threads
+
+Command used to run experiment: 'MSORT_THREADS=5 ./tmsort 100000000 < hundred-million.txt > /dev/null`
+
+Sorting portion timings:
+
+1. 4.416931 seconds
+2. 4.346295 seconds
+3. 4.377550 seconds
+4. 4.359940 seconds
+
+#### 10 Threads
+
+Command used to run experiment: `MSORT_THREADS=10 ./tmsort 100000000 < hundred-million.txt > /dev/null`
+
+Sorting portion timings:
+
+1. 4.314750 seconds
+2. 4.275673 seconds
+3. 4.356747 seconds
+4. 4.353963 seconds
+
+## Host 2: [NAME]
 
 - CPU: 
 - Cores: 
@@ -53,11 +102,6 @@ Sorting portion timings:
 4. ______ seconds
 
 *repeat sections as needed*
-
-## Host 2: [NAME]
-
-*use Host 1 template to fill this section*
-
 
 ## Observations and Conclusions
 
